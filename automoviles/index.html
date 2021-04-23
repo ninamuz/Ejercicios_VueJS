@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="index.js" defer></script>
+    <!--defer hace que se ejecute al final-->
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app">
+
+        <h1>Ingreso de datos</h1>
+        <form @submit.prevent>
+            <h4>Ingrese los datos requeridos:</h4>
+            
+            <p><label>Patente</label>
+            <input type="text" v-model="patente"></p>
+
+            <p><label>Marca</label>
+            <input type="text" v-model="marca"></p>
+
+            <p><label>Modelo</label>
+            <input type="text" v-model=modelo></p>
+
+            <p><label>Color</label>
+            <input type="text" v-model="color"></p>
+
+            <p><label>Descripción</label>
+            <input type="text" v-model="descripcion"></p>
+
+            <button @click="agregar()">Agregar al listado</button>
+        </form>
+
+        <h1>Automóviles agregados</h1>
+        <table>
+            <!--encabezado de la tabla-->
+            <thead>
+                <tr>
+                    <th>Patente</th>
+                    <th>Marca</th>
+                    <th>Modelo</th>
+                    <th>Color</th>
+                    <th>Descripción</th>
+                </tr>
+            </thead>
+            <!--cuerpo de la tabla-->
+            <tbody>
+                <tr v-for="auto of autos">
+                    <td>{{auto.patente}}</td>
+                    <td>{{auto.marca}}</td>
+                    <td>{{auto.modelo}}</td>
+                    <td>{{auto.color}}</td>
+                    <td>{{auto.descripcion}}</td>         
+                </tr>
+            </tbody>
+
+        </table>
+
+
+
+    </div>
+
+</body>
+
+</html>
