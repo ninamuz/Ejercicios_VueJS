@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--Realice un formulario con 2 input para ingresar el nombre y la edad. El botón submit deberá validar que el campo nombre no esté vacío y que no contenga espacios. Además deberá validar que el campo edad no esté vacío y que contenga sólo números entre 18 y 99.
+Si existe algún error, indicarlo con un mensaje de texto en rojo.
+Si no existe error, redirigir a una página con la frase “FORMULARIO OK”.
+-->
+    <div id="app">
+
+        <form @submit="validar" action="validacion.html">
+
+            <label>Nombre</label>
+            <input type="text" v-model="nombre"><br>
+            <br>
+            <label>Edad</label>
+            <input type="number" v-model.number="edad"><br>
+
+            <!--mensajes de error-->
+            <p v-if="errores.length" class="mensajerojo">El formulario contiene los siguientes errores:</p>
+            <ul>
+                <li v-for="error of errores">{{ error }}</li>
+            </ul>
+            <br>
+            <button>Validar</button>
+
+        </form>
+
+
+
+
+    </div>
+
+
+    <!-- script externo siempre antes del propio -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
