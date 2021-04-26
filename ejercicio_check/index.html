@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="index.js" defer></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <h2>Formulario</h2>
+        <h3>input checkbox / select single o múltiple / radio</h3>
+        <form @submit.prevent>
+
+            <label>Nombre</label> <input type="text" v-model="nombre"><br>
+            <label>Gustos de películas</label><br>
+            <label><input type="checkbox" v-model="peliculasterror">Peliculas de terror</label><br>
+            <label><input type="checkbox" v-model="peliculascomedia">Peliculas de comedia</label><br>
+            <label><input type="checkbox" v-model="peliculasromance">Peliculas de romance</label><br>
+            <label><input type="checkbox" v-model="peliculasaccion">Peliculas de acción</label><br>
+            <hr>
+            <label>Gustos de películas</label><br>
+            <label><input type="checkbox" v-model="peliculas" value="Terror">Peliculas de terror</label><br>
+            <label><input type="checkbox" v-model="peliculas" value="Comedia">Peliculas de comedia</label><br>
+            <label><input type="checkbox" v-model="peliculas" value="Romance">Peliculas de romance</label><br>
+            <label><input type="checkbox" v-model="peliculas" value="Acción">Peliculas de acción</label><br>
+            <hr>
+            <label>Gustos de películas</label><br>
+            <select v-model="peliculas" multiple>
+                <option value="Terror">Terror</option>
+                <option value="Comedia">Comedia</option>
+                <option value="Romance">Romance</option>
+                <option value="Acción">Acción</option>
+            </select>
+            <hr>
+
+            <label>Tratamiento</label><br>
+            <label><input type="radio" value="Sr." v-model="tratamiento">Sr.</label>
+            <label><input type="radio" value="Sra." v-model="tratamiento">Sr.</label>
+            <label><input type="radio" value="Srta." v-model="tratamiento">Sr.</label>
+            <label><input type="radio" value="Srto." v-model="tratamiento">Sr.</label>
+            <hr>
+            <label>Tratamiento</label>
+            <select v-model="tratamiento">
+                <option value="">Seleccione un tratamiento</option>
+                <option value="Sr.">Sr.</option>
+                <option value="Sra.">Sra.</option>
+                <option value="Srta.">Srta.</option>
+                <option value="Srto.">Srto.</option>
+            </select>
+
+
+        </form>
+
+
+
+
+    </div>
+
+
+</body>
+
+</html>
