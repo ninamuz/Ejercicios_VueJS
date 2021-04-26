@@ -2,10 +2,10 @@ let app = new Vue({
     el: "#app",
     data: {
         nombre: "",
-        peliculasterror: "",
-        peliculascomedia: "",
-        peliculasromance: "",
-        peliculasaccion: "",
+        peliculasterror: false,
+        peliculascomedia: false,
+        peliculasromance: false,
+        peliculasaccion: false,
         peliculas: [],
         tratamiento: "",
 
@@ -14,7 +14,7 @@ let app = new Vue({
     methods: {
 
         verificar() {
-            
+
         }
 
     }
